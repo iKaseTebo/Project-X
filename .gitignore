@@ -1,10 +1,10 @@
 .git/
 .idea/
-nginx-conf/ssl/
-app/node_modules/
+nginx-conf/ssl/*
+app/node_modules/*
 app/.env
-shared/
-app/bower_components/
-database/mysql/
+shared/*
+app/bower_components/*
+database/mysql/*
 
 
