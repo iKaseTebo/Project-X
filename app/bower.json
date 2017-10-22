@@ -1,0 +1,28 @@
+{
+  "name": "Project_X",
+  "description": "Gym App",
+  "main": "Index.php",
+  "authors": [
+    "Kase Tebo <iKaseTebo@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Gym",
+    "Partners"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-cookies": "^1.6.6",
+    "angular-route": "^1.6.6",
+    "bootstrap": "^3.3.7"
+  }
+}

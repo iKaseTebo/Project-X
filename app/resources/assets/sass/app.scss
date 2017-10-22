@@ -1,0 +1,12 @@
+$primary: #212121;
+$accent1: #ff9800 ;
+$accent2: #ffb66a;
+
+body {
+  background-color: $primary;
+}
+
+a.orange:hover {
+  background-color: $accent2 !important;
+}
+

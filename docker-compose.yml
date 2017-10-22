@@ -1,0 +1,53 @@
+version: '3'
+services:
+  app:
+    container_name: project-x-v0.11
+    image: ikasetebo/project_x:v1.00
+    networks:
+      - proxy_bridge_11
+      - app_bridge
+    pid: 'host'
+    expose:
+      - "80"
+    volumes:
+      - ./app/:/usr/share/nginx/html/
+      - ./nginx-conf/conf/conf.d/:/etc/nginx/conf.d/
+  nginx:
+    container_name: project-x-proxy-v0.11
+    image: ikasetebo/nginx-16.04:v10.14
+    networks:
+      - proxy_bridge_11
+    ports:
+      - "8080:8080"
+      - "443:443"
+    volumes:
+      - ./proxy-conf/conf/conf.d/:/etc/nginx/conf.d/
+      - ./proxy-conf/sites-available/default:/etc/nginx/sites-available/default
+      - ./shared/:/shared/
+    depends_on:
+      - app
+  db:
+       container_name: Database-02
+       image: mysql:8.0
+       expose:
+         - '3306'
+       volumes:
+         - ./database/mysql/:/var/lib/mysql/
+       networks:
+         - app_bridge
+       environment:
+         - MYSQL_ROOT_PASSWORD=secret
+         - MYSQL_USER=root
+  adminer:
+       container_name: Adminer-02
+       image: adminer:latest
+       ports:
+         - '8000:8080'
+       networks:
+          - app_bridge
+
+networks:
+  app_bridge:
+    driver: bridge
+  proxy_bridge_11:
+      driver: bridge

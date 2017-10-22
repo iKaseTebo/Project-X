@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAIA;EACE,0BALe;CAMhB;;AAED;EACE,qCAAqC;CACtC","file":"app.css","sourcesContent":["$primary: #212121;\n$accent1: #ff9800 ;\n$accent2: #ffb66a;\n\nbody {\n  background-color: $primary;\n}\n\na.orange:hover {\n  background-color: $accent2 !important;\n}\n\n"]}
