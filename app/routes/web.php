@@ -14,12 +14,12 @@
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 
+
 Route::get('/', function () {
-//    dd('Hello');
     return view('welcome');
 });
 
-//Route::get('/authenticate', 'authenticateController');
-//Route::get('/session', 'authenticateController@checkSession');
 
-//    Route::match(['GET', 'POST'], '/show', 'PostsController@showMyView');
+
+require_once 'sessions/sessions.php';
+require_once 'authenticate/authenticate.php';

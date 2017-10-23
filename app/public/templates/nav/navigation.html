@@ -1,12 +1,4 @@
 <div ng-controller="signInController">
-    <div ng-mouseleave="hideMenu();">
-        <ul ng-hide="dropDown" style="margin:0;">
-            <li style="padding:30px;"><a ng-click="onFBLogin()" class="orange-text">Facebook</a></li>
-            <li class="divider"></li>
-            <li style="padding:30px;"><a class="g-signin2 orange-text" ng-click="onGoogleLogin()" >Google</a></li>
-        </ul>
-    </div>
-
     <nav role="navigation" class="orange">
         <div class="nav-wrapper container">
             <a href="#!" class="brand-logo center">Project X</a>
@@ -18,4 +10,11 @@
             </ul>
         </div>
     </nav>
+    <div ng-mouseleave="hideMenu();">
+        <ul ng-hide="dropDown" style="margin:0;">
+            <li style="padding:30px;"><a ng-click="onFBLogin()" class="orange-text">Facebook</a></li>
+            <li class="divider"></li>
+            <li style="padding:30px;"><a class="g-signin2 orange-text" ng-click="onGoogleLogin()" >Google</a></li>
+        </ul>
+    </div>
 </div>
