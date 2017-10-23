@@ -8,6 +8,7 @@ myApp.controller('mainController', ['$scope', '$http', '$filter', function ($sco
 	};
 
 	$scope.onGoogleLogin = function() {
+		gapi.client.load('plus', 'v1',function(){}); 
 		var params = {
 			'clientid': '862262554506-mnr23l6d4tbm5atg5b72eo5df7b5p1ta.apps.googleusercontent.com',
 			'cookiepolicy': 'single_host_origin',
@@ -28,7 +29,7 @@ myApp.controller('mainController', ['$scope', '$http', '$filter', function ($sco
         },
         
         'approvalprompt': 'force',
-        'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read' 
+        'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email' 
 	};
 
 	gapi.auth.signIn(params);

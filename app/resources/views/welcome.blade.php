@@ -23,6 +23,16 @@
     <script type="text/javascript" src="http://localhost:8080/js/app.js"></script>
     <script type="text/javascript" src="http://localhost:8080/js/directives.js"></script>
     <script type="text/javascript" src="http://localhost:8080/js/controllers.js"></script>
+    <script>
+    (function() {
+    var p = document.createElement('script'); 
+    p.type = 'text/javascript'; 
+    p.async = true;
+    p.src = 'https://apis.google.com/js/client.js?onload=onLoadFunction';
+    var s = document.getElementsByTagName('script')[0]; 
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
 
 
 </html>
