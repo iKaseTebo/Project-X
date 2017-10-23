@@ -2751,7 +2751,7 @@ video.responsive-video {
 }
 
 .parallax-container .parallax img {
-  /*display: none;*/
+  display: inherit !important;
   position: absolute;
   left: 50%;
   bottom: 0;
