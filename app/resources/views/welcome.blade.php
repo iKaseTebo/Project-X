@@ -13,8 +13,8 @@
         <link rel="stylesheet" href="http://localhost:8080/css/materialize.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-    <body >
-    <navigation></navigation>
+    <body>
+        <div navigation></div>
         <div  ng-view>
 
         </div>

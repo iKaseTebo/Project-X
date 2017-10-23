@@ -1,17 +1,21 @@
-<ul id="dropdown1" class="dropdown-content">
-    <li><a ng-click="onFBLogin()" class="orange-text">Facebook</a></li>
-    <li class="divider"></li>
-    <li><a class="g-signin2 orange-text" ng-click="onGoogleLogin()" >Google</a></li>
-</ul>
-
-<nav role="navigation" class="orange">
-    <div class="nav-wrapper container">
-        <a href="#!" class="brand-logo center">Project X</a>
-        <ul class="left hide-on-med-and-down">
-            <!-- Dropdown Trigger -->
-            <li>
-                <a class="dropdown-button" href="#!" data-activates="dropdown1">Sign In<i class="material-icons right">arrow_drop_down</i></a>
-            </li>
+<div ng-controller="signInController">
+    <div ng-mouseleave="hideMenu();">
+        <ul ng-hide="dropDown" style="margin:0;">
+            <li style="padding:30px;"><a ng-click="onFBLogin()" class="orange-text">Facebook</a></li>
+            <li class="divider"></li>
+            <li style="padding:30px;"><a class="g-signin2 orange-text" ng-click="onGoogleLogin()" >Google</a></li>
         </ul>
     </div>
-</nav>
+
+    <nav role="navigation" class="orange">
+        <div class="nav-wrapper container">
+            <a href="#!" class="brand-logo center">Project X</a>
+            <ul class="left hide-on-med-and-down">
+                <!-- Dropdown Trigger -->
+                <li>
+                    <a class="dropdown-button" href="#!" ng-mousedown="hoverOver()" >Sign In<i class="material-icons right">arrow_drop_down</i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

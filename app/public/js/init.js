@@ -1,11 +1,4 @@
-(function($){
-    $(function(){
 
-        $('.button-collapse').sideNav();
-        $('.parallax').parallax();
-
-    }); // end of document ready
-})(jQuery); // end of jQuery name space
 
 function onLoadFunction(){
     gapi.client.setApiKey('AIzaSyC1JAsVigMIGJzoU4WM1ilUAr728mJn9CM');
@@ -43,4 +36,11 @@ window.fbAsyncInit = function() {
    }(document, 'script', 'facebook-jssdk'));
 
 
+(function($){
+    $(function(){
 
+        $('.button-collapse').sideNav();
+        $('.parallax').parallax();
+
+    }); // end of document ready
+})(jQuery); // end of jQuery name space

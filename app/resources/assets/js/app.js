@@ -9,8 +9,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
     $routeProvider.when('/', {
         templateUrl: 'templates/homepage/home.html',
         controller: 'mainController'
-    }).when('/signIn', {
-        templateUrl: 'templates/authorization/login.html',
-        controller: 'signInController'
+    }).when('/dashboard', {
+        templateUrl: 'templates/dashboard/dashboard.html',
+        controller: 'dashboardController'
     })
 }]);
