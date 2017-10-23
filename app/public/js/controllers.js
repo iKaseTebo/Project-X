@@ -10,7 +10,7 @@ myApp.controller('mainController', ['$scope', '$http', '$filter', function ($sco
 	$scope.onGoogleLogin = function() {
 		gapi.client.load('plus', 'v1',function(){}); 
 		var params = {
-			'clientid': '862262554506-mnr23l6d4tbm5atg5b72eo5df7b5p1ta.apps.googleusercontent.com',
+			'clientid': '1020720557495-77q2bro5446gtjtnv3dnmqp7iq853q0q.apps.googleusercontent.com',
 			'cookiepolicy': 'single_host_origin',
 			'callback': function(result){
 				if(result['status']['signed_in']) {
@@ -20,10 +20,11 @@ myApp.controller('mainController', ['$scope', '$http', '$filter', function ($sco
 					}
 				);
 				request.execute(function(resp) {
-					$scope.$apply(function() {
-						$scope.gmail.username = resp.displayName;
-						$scope.gmail.email = resp.emails[0].value;
-					});
+					console.log(resp);
+					// $scope.$apply(function() {
+					// 	$scope.gmail.username = resp.displayName;
+					// 	$scope.gmail.email = resp.emails[0].value;
+					// });
 				});
 			} 
         },
