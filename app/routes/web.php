@@ -19,4 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Route::get('/authenticate', 'authenticateController');
+//Route::get('/session', 'authenticateController@checkSession');
+
 //    Route::match(['GET', 'POST'], '/show', 'PostsController@showMyView');

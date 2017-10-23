@@ -2747,10 +2747,11 @@ video.responsive-video {
   right: 0;
   bottom: 0;
   z-index: -1;
+  /*height: 500px;*/
 }
 
 .parallax-container .parallax img {
-  display: none;
+  /*display: none;*/
   position: absolute;
   left: 50%;
   bottom: 0;

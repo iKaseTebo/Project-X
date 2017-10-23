@@ -13,8 +13,11 @@
         <link rel="stylesheet" href="http://localhost:8080/css/materialize.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-    <body ng-view>
+    <body >
+    <navigation></navigation>
+        <div  ng-view>
 
+        </div>
     </body>
     <script type="text/javascript" src="http://localhost:8080/js/jquery.js"></script>
     <script type="text/javascript" src="http://localhost:8080/js/materialize.js"></script>
@@ -23,16 +26,6 @@
     <script type="text/javascript" src="http://localhost:8080/js/app.js"></script>
     <script type="text/javascript" src="http://localhost:8080/js/directives.js"></script>
     <script type="text/javascript" src="http://localhost:8080/js/controllers.js"></script>
-    <script>
-    (function() {
-    var p = document.createElement('script'); 
-    p.type = 'text/javascript'; 
-    p.async = true;
-    p.src = 'https://apis.google.com/js/client.js?onload=onLoadFunction';
-    var s = document.getElementsByTagName('script')[0]; 
-    s.parentNode.insertBefore(p, s);
-})();
-</script>
-
+    <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=onLoadFunction"></script>
 
 </html>

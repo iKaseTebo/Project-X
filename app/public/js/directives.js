@@ -45,4 +45,12 @@ myApp.directive('twoColumn', function(){
     }
 
 });
+/**
+ * Created by iKase on 10/21/2017.
+ */
+myApp.directive('navigation', function(){
+    return {
+        templateUrl: 'templates/nav/navigation.html'
+    }
+});
 //# sourceMappingURL=directives.js.map

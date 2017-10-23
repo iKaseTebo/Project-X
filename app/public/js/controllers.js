@@ -33,13 +33,38 @@ myApp.controller('mainController', ['$scope', '$http', '$filter', function ($sco
         'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email' 
 	};
 
-	gapi.auth.signIn(params);
-}
+		gapi.auth.signIn(params);
+	}
+
+	$scope.facebook = {
+		username: "",
+		email: ""
+	};
+
+	$scope.onFBLogin = function() {
+		FB.login(function(response) {
+			if(response.authResponse) {
+				FB.api('/me', 'GET', {fields: 'email, first_name, name, id, picture, gender'}, function(response) {
+					console.log(response);
+					$scope.$apply(function() {
+						$scope.facebook.username = response.name;
+						$scope.facebook.email = response.email;
+					});
+				});
+			} else {
+
+			}
+		}, {
+			scope: 'email, user_likes',
+			return_scopes: true
+		});
+	}
+
 }]);
 /**
  * Created by iKase on 10/10/2017.
  */
 myApp.controller('signInController', ['$scope', '$http', '$filter', function ($scope, $http, $filter) {
-
+    console.log('Hello');
 }]);
 //# sourceMappingURL=controllers.js.map
