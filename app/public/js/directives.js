@@ -4,6 +4,7 @@
 myApp.directive('navigation', function(){
     return {
         templateUrl: 'templates/nav/navigation.html',
+        // replace: true,
         scope: {
             logged: '@'
         }

@@ -1,6 +1,7 @@
 <div ng-controller="signInController">
     <nav role="navigation" class="orange">
-        <div class="nav-wrapper container">
+        <div ng-init="isLogged()" class="nav-wrapper container">
+
             <a href="#!" class="brand-logo center">Project X</a>
             <ul class="left hide-on-med-and-down" ng-hide="logged">
                 <!-- Dropdown Trigger -->
@@ -8,8 +9,23 @@
                     <a class="dropdown-button" href="#!" ng-mousedown="hoverOver()" >Sign In<i class="material-icons right">arrow_drop_down</i></a>
                 </li>
             </ul>
+
+            <div ng-hide="!logged">
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/session">Session</a></li>
+                    <li><a ng-click="logout()">Logout</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="/session">Session</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
         </div>
+
+
     </nav>
+
     <div ng-mouseleave="hideMenu();">
         <ul ng-hide="dropDown" style="margin:0;">
             <li style="padding:30px;"><a ng-click="onFBLogin()" class="orange-text">Facebook</a></li>
@@ -17,4 +33,5 @@
             <li style="padding:30px;"><a class="g-signin2 orange-text" ng-click="onGoogleLogin()" >Google</a></li>
         </ul>
     </div>
-</div>
+
+ </div>

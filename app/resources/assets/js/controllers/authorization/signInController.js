@@ -1,9 +1,5 @@
 myApp.controller('signInController', ['$scope', '$http', '$filter', function ($scope, $http, $filter) {
 
-   // Checking for Session
-   $scope.logged = true;
-   $http.get('/session').then(checkSession);
-
    // Drop Down Menu
    $scope.dropDown = true;
    $scope.hoverOver = function(){
@@ -23,8 +19,6 @@ myApp.controller('signInController', ['$scope', '$http', '$filter', function ($s
         username: "",
         email: ""
     };
-
-
 
     // Google Login Function
     $scope.onGoogleLogin = function() {
@@ -80,16 +74,30 @@ myApp.controller('signInController', ['$scope', '$http', '$filter', function ($s
         });
     };
 
+    $scope.logout = function(){
+        $http.get('/logout').then(logoutSuccessCallback);
+    };
+
+
+    $scope.isLogged = function () {
+        $http.get('/session').then(checkSession);
+    };
+
   // NON-SCOPED FUNCTIONS
     // Success CallBack for Setting Session
     function successCallback(){
         console.log('Success');
     }
 
+    function logoutSuccessCallback(){
+        console.log('Logged Out');
+        $scope.logged = false;
+    }
+
     // Success CallBack for Checking Session
     function checkSession($resp){
         console.log($resp);
         $resp.data.email ? $scope.logged = true : $scope.logged = false;
-
     }
+
 }]);
