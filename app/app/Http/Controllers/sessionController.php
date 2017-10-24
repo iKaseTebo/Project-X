@@ -15,7 +15,7 @@ class SessionController extends Controller
     }
 
     public function checkSession(Request $request){
-        var_dump($request->session()->get('userSession'));
+        return $request->session()->get('userSession');
     }
 
     public function setSession( Request $request, $platform = false){

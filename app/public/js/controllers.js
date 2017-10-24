@@ -5,8 +5,13 @@ myApp.controller('mainController', ['$scope', '$http', '$filter', function ($sco
 
 }]);
 myApp.controller('signInController', ['$scope', '$http', '$filter', function ($scope, $http, $filter) {
-   $scope.dropDown = true;
 
+   // Checking for Session
+   $scope.logged = true;
+   $http.get('/session').then(checkSession);
+
+   // Drop Down Menu
+   $scope.dropDown = true;
    $scope.hoverOver = function(){
      $scope.dropDown = false;
    };
@@ -64,6 +69,7 @@ myApp.controller('signInController', ['$scope', '$http', '$filter', function ($s
                 FB.api('/me', 'GET', {fields: 'email, first_name, last_name, name, id, picture, gender'}, function(response) {
                     console.log(response);
                     $http.post('/session/fb', response).then(successCallback);
+                    $scope.logged = true;
                     $scope.$apply(function() {
                         $scope.facebook.username = response.name;
                         $scope.facebook.email = response.email;
@@ -78,10 +84,19 @@ myApp.controller('signInController', ['$scope', '$http', '$filter', function ($s
             scope: 'email, user_likes',
             return_scopes: true
         });
-    }
+    };
 
+  // NON-SCOPED FUNCTIONS
+    // Success CallBack for Setting Session
     function successCallback(){
         console.log('Success');
+    }
+
+    // Success CallBack for Checking Session
+    function checkSession($resp){
+        console.log($resp);
+        $resp.data.email ? $scope.logged = true : $scope.logged = false;
+
     }
 }]);
 /**

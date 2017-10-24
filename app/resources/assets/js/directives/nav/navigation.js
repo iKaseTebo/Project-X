@@ -3,6 +3,9 @@
  */
 myApp.directive('navigation', function(){
     return {
-        templateUrl: 'templates/nav/navigation.html'
+        templateUrl: 'templates/nav/navigation.html',
+        scope: {
+            logged: '@'
+        }
     }
 });
