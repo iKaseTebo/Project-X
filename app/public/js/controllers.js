@@ -61,11 +61,14 @@ myApp.controller('signInController', ['$scope', '$http', '$filter', function ($s
     $scope.onFBLogin = function() {
         FB.login(function(response) {
             if(response.authResponse) {
-                FB.api('/me', 'GET', {fields: 'email, first_name, name, id, picture, gender'}, function(response) {
+                FB.api('/me', 'GET', {fields: 'email, first_name, last_name, name, id, picture, gender'}, function(response) {
                     console.log(response);
+                    $http.post('/session/fb', response).then(successCallback);
                     $scope.$apply(function() {
                         $scope.facebook.username = response.name;
                         $scope.facebook.email = response.email;
+
+
                     });
                 });
             } else {
@@ -77,6 +80,9 @@ myApp.controller('signInController', ['$scope', '$http', '$filter', function ($s
         });
     }
 
+    function successCallback(){
+        console.log('Success');
+    }
 }]);
 /**
  * Created by iKase on 10/23/2017.
